@@ -7,3 +7,5 @@ settings.json
 __pycache__
 .vscode*
 communitynotes_env
+
+.venv

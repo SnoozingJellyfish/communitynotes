@@ -216,7 +216,8 @@ def _run_scorer_parallelizable(
           [c.expansion],
           c.expansionFlipPct,
           c.expansionRatingStatusKey,
-          c.currentExpansionStatusKey,
+          #c.currentExpansionStatusKey,#  (フォーク元リポジトリから変更) noteStatusHistory-00000.tsv にcurrentExpansionStatusがないためコメントアウト  
+          c.currentLabelKey, #  (フォーク元リポジトリから変更) c.currentExpansionStatusKeyの代わりに設定  
         )
       elif isinstance(scorer, MFCoreScorer):
         flips = _check_flips(
@@ -226,7 +227,8 @@ def _run_scorer_parallelizable(
           [c.core],
           c.coreFlipPct,
           c.coreRatingStatusKey,
-          c.currentCoreStatusKey,
+          #c.currentCoreStatusKey, #  (フォーク元リポジトリから変更) noteStatusHistory-00000.tsv にcurrentCoreStatusがないため変更  
+          c.currentLabelKey, #  (フォーク元リポジトリから変更) c.currentCoreStatusKeyの代わりに設定  
         )
       if flips:
         if scorer._seed is not None:
@@ -651,7 +653,8 @@ def run_scoring(
   runParallel: bool = True,
   dataLoader: Optional[CommunityNotesDataLoader] = None,
   maxReruns: int = c.maxReruns,
-  useStableInitialization: bool = True,
+  # useStableInitialization: bool = True,  # (フォーク元リポジトリから変更) userEnrollment-00000.tsvのmodelingGroupに13がないためFalseに変更  
+  useStableInitialization: bool = False,  # (フォーク元リポジトリから変更) 
 ):
   """Invokes note scoring algorithms, merges results and computes user stats.
 
