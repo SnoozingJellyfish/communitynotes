@@ -338,11 +338,11 @@ noteStatusHistoryTSVColumnsAndTypes = [
   (timestampMillisOfStatusLockKey, np.double),  # double because nullable.
   (lockedStatusKey, object),
   (timestampMillisOfRetroLockKey, np.double),  # double because nullable.
-  #(currentCoreStatusKey, object),  # (フォーク元リポジトリから変更) noteStatusHistory-00000.tsv にないためコメントアウト
-  #(currentExpansionStatusKey, object),  # (フォーク元リポジトリから変更) noteStatusHistory-00000.tsv にないためコメントアウト
-  #(currentGroupStatusKey, object),  # (フォーク元リポジトリから変更) noteStatusHistory-00000.tsv にないためコメントアウト
-  #(currentDecidedByKey, object),  # (フォーク元リポジトリから変更) noteStatusHistory-00000.tsv にないためコメントアウト
-  #(currentModelingGroupKey, object),  # (フォーク元リポジトリから変更) noteStatusHistory-00000.tsv にないためコメントアウト
+  (currentCoreStatusKey, object),  
+  (currentExpansionStatusKey, object),  
+  (currentGroupStatusKey, object),  
+  (currentDecidedByKey, object),  
+  (currentModelingGroupKey, object),  
 ]
 noteStatusHistoryTSVColumns = [col for (col, dtype) in noteStatusHistoryTSVColumnsAndTypes]
 noteStatusHistoryTSVTypes = [dtype for (col, dtype) in noteStatusHistoryTSVColumnsAndTypes]
